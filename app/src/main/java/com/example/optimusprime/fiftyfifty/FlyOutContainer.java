@@ -28,13 +28,14 @@ public class FlyOutContainer extends LinearLayout {
     // Layout Constants
     protected static final int menuMargin = 180;
 
-    public enum MenuState {
+    public enum MenuState
+    {
         CLOSED, OPEN, CLOSING, OPENING
     };
 
     // Position information attributes
     protected int currentContentOffset = 0;
-    protected MenuState menuCurrentState = MenuState.CLOSED;
+    protected MenuState menuCurrentState = MenuState.OPEN;
 
     // Animation objects
     protected Scroller menuAnimationScroller = new Scroller(this.getContext(),
