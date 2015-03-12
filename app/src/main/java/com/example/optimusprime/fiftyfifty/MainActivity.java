@@ -63,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void mode3Click(View v){
-        Intent moveMyMeat = new Intent(this, Mode3.class);
+        Intent move = new Intent(this, Mode3.class);
         startActivity(new Intent(getApplicationContext(), Mode3.class));
     }
 
