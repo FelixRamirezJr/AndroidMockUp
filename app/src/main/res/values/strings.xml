@@ -5,5 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="at">ThisIsSomething</string>
+    <string name="title_activity_mode2">Mode2</string>
+    <string name="title_activity_mode3">Mode3</string>
+    <string name="title_activity_list">listActivity</string>
+    <string name="title_activity_meet_up">MeetUp</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.example.optimusprime.fiftyfifty;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +18,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(0xfff00000);
+        view.setBackgroundColor(0x00000000);
+
        this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.activity_main,null);
         this.setContentView(root);
     }
@@ -31,8 +33,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item){
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -43,16 +44,34 @@ public class MainActivity extends ActionBarActivity {
         {
             return true;
         }
-
-
-
         return super.onOptionsItemSelected(item);
+    }
+
+    public void listClick(View v){
+        Intent moveToList = new Intent(this, listActivity.class);
+        startActivity(new Intent(getApplicationContext(), listActivity.class));
+    }
+
+    public void meetClick(View v){
+        Intent moveMyMeat = new Intent(this, MeetUp.class);
+        startActivity(new Intent(getApplicationContext(), MeetUp.class));
+    }
+
+    public void mode2Click(View v){
+        Intent moveMyMeat = new Intent(this, Mode2.class);
+        startActivity(new Intent(getApplicationContext(), Mode2.class));
+    }
+
+    public void mode3Click(View v){
+        Intent moveMyMeat = new Intent(this, Mode3.class);
+        startActivity(new Intent(getApplicationContext(), Mode3.class));
     }
 
     public void setActivityBackgroundColor(int color){
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(color);
     }
+
 
     public void toggleMenu (View v)
     {

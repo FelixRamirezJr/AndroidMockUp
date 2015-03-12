@@ -18,13 +18,13 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
+            android:onClick="mode2Click"
             android:text="Mode 2" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
+            android:onClick="mode3Click"
             android:text="Mode 3" />
     </LinearLayout>
 
@@ -51,6 +51,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="listClick"
             android:text="List"
             android:id="@+id/ListButton"
             android:layout_alignParentBottom="true"
@@ -69,6 +70,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="meetClick"
             android:text="Meet Up"
             android:id="@+id/MeetUpButton"
             android:layout_alignParentBottom="true"
