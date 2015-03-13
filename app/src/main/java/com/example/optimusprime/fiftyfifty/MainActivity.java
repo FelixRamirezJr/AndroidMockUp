@@ -67,10 +67,11 @@ public class MainActivity extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), Mode3.class));
     }
 
-    public void setActivityBackgroundColor(int color){
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(color);
+    public void preferencesClick (View v){
+        Intent moveToPreferences = new Intent (this,Preferences.class);
+        startActivity(moveToPreferences);
     }
+
 
 
     public void toggleMenu (View v)

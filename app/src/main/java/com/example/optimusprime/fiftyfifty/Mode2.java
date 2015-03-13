@@ -17,7 +17,6 @@ public class Mode2 extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(0x00000000);
-
         this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.activity_main,null);
         this.setContentView(root);
     }

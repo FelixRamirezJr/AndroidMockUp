@@ -63,6 +63,7 @@
             android:layout_height="wrap_content"
             android:text="Preferences"
             android:id="@+id/PreferencesButton"
+            android:onClick="preferencesClick"
             android:layout_alignBottom="@+id/ListButton"
             android:layout_toRightOf="@+id/ListButton"
             android:layout_toEndOf="@+id/ListButton" />
