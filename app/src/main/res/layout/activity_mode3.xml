@@ -12,20 +12,23 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toggleMenu"
-            android:text="Mode 1" />
+            android:onClick="mode1Click"
+            android:text="Mode 1"
+            android:background="@drawable/button"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="mode2Click"
-            android:text="Mode 2" />
+            android:text="Mode 2"
+            android:background="@drawable/button"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="mode3Click"
-            android:text="Mode 3" />
+            android:onClick="toggleMenu"
+            android:text="Mode 3"
+            android:background="@drawable/button"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -41,17 +44,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="toggleMenu"
+            android:background="@drawable/button"
             android:text="Menu"
             android:layout_gravity="right"
+            android:id="@+id/MenuButton"
             android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/MenuButton" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="listClick"
+            android:background="@drawable/button"
             android:text="List"
             android:id="@+id/ListButton"
             android:layout_alignParentBottom="true"
@@ -62,20 +67,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Preferences"
+            android:background="@drawable/button"
             android:id="@+id/PreferencesButton"
-            android:layout_alignBottom="@+id/ListButton"
-            android:layout_toRightOf="@+id/ListButton"
-            android:layout_toEndOf="@+id/ListButton" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="meetClick"
+            android:background="@drawable/button"
             android:text="Meet Up"
             android:id="@+id/MeetUpButton"
             android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/PreferencesButton"
-            android:layout_toEndOf="@+id/PreferencesButton" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

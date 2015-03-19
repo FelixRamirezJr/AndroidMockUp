@@ -1,9 +1,11 @@
 package com.example.optimusprime.fiftyfifty;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MeetUp extends ActionBarActivity {
@@ -22,6 +24,10 @@ public class MeetUp extends ActionBarActivity {
         return true;
     }
 
+    public void mode1Click(View v){
+        Intent moveMode2 = new Intent(this, MainActivity.class);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

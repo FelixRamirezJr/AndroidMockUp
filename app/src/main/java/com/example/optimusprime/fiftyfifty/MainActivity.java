@@ -13,14 +13,14 @@ import android.widget.RelativeLayout;
 public class MainActivity extends ActionBarActivity {
     FlyOutContainer root;
 
-   // MenuItem menuButtons;
+    // MenuItem menuButtons;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(0x00000000);
 
-       this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.activity_main,null);
+        view.setBackgroundColor(0x00000000);
+        this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.activity_main,null);
         this.setContentView(root);
     }
 
@@ -57,21 +57,29 @@ public class MainActivity extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), MeetUp.class));
     }
 
+    public void mode1Click(View v){
+        Intent moveMode1 = new Intent(this, MainActivity.class);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
     public void mode2Click(View v){
-        Intent moveMyMeat = new Intent(this, Mode2.class);
+        Intent moveMode2 = new Intent(this, Mode2.class);
         startActivity(new Intent(getApplicationContext(), Mode2.class));
     }
 
     public void mode3Click(View v){
-        Intent move = new Intent(this, Mode3.class);
+        Intent moveMode3 = new Intent(this, Mode3.class);
         startActivity(new Intent(getApplicationContext(), Mode3.class));
     }
 
-    public void preferencesClick (View v){
-        Intent moveToPreferences = new Intent (this,Preferences.class);
-        startActivity(moveToPreferences);
+    public void ContactClick(View v){
+        Intent Contact = new Intent(this, Mode3.class);
+        startActivity(new Intent(getApplicationContext(), Contacts.class));
     }
 
+    public void setActivityBackgroundColor(int color){
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(color);
+    }
 
 
     public void toggleMenu (View v)
@@ -79,8 +87,9 @@ public class MainActivity extends ActionBarActivity {
         this.root.toggleMenu();
         if( (this.root.menuCurrentState == this.root.menuCurrentState.OPEN) || (this.root.menuCurrentState == root.menuCurrentState.OPENING) )
         {
-           View b = findViewById(R.id.MenuButton); // THIS DID NOT FUCKING WORK ===^__^=====
-           b.setVisibility(View.GONE);
+            //Does not work
+            View b = findViewById(R.id.MenuButton);
+            b.setVisibility(View.GONE);
         }
 
         else

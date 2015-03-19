@@ -35,11 +35,11 @@ public class FlyOutContainer extends LinearLayout {
 
     // Position information attributes
     protected int currentContentOffset = 0;
-    protected MenuState menuCurrentState = MenuState.OPEN;
+    protected MenuState menuCurrentState = MenuState.CLOSED;
 
     // Animation objects
     protected Scroller menuAnimationScroller = new Scroller(this.getContext(),
-            new SmoothInterpolator());
+            new LinearInterpolator());
     //	protected Scroller menuAnimationScroller = new Scroller(this.getContext(),
 //			new SmoothInterpolator());
     protected Runnable menuAnimationRunnable = new AnimationRunnable();
