@@ -3,9 +3,14 @@ package com.example.optimusprime.fiftyfifty;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
 
 public class Contacts extends ActionBarActivity {
@@ -13,7 +18,31 @@ public class Contacts extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contacts);
+
+        ScrollView sv = new ScrollView(this);
+        final LinearLayout ll = new LinearLayout(this);
+        ll.setOrientation(LinearLayout.VERTICAL);
+        sv.addView(ll);
+      //  setContentView(R.layout.activity_contacts);
+
+        ///////////////////////////////////
+        // Creating The Button
+        ///////////////////////////////////
+        Button backButton = new Button(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.FILL_PARENT);
+        params.weight = (int) 1.0f;
+        params.gravity= Gravity.RIGHT;
+        backButton.setLayoutParams(params);
+        backButton.setText("Back");
+        ll.addView(backButton);
+        ////////END OF THE CREATION////////
+
+
+
+
+        setContentView(sv);
+
+
     }
 
 

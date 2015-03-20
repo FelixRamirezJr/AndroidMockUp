@@ -44,27 +44,20 @@ public class Preferences extends ActionBarActivity {
 
         backButton.setText("Back");
 
-        b.setText("Click For Preferences");
+        b.setText("Choose your list of preferences");
         ll.addView(backButton);
         ll.addView(b);
 
-            b.setOnClickListener(new View.OnClickListener() {
-
-
-                @Override
-                public void onClick(View v)
-                {
                     // This is Creating the CheckBoxes Should Extract From the YELP API
-                    String [] arr = new String[5];
-                    arr[0] = "Bars";arr[1] = "Strip Clubs";arr[2] = "Restaurants"; arr[3] = "SuperMarkets";arr[4] = "Vegan Places";
-                    for(int i = 0; i < arr.length; i++)
-                    {
-                        CheckBox cb = new CheckBox(getApplicationContext());
-                        cb.setText(arr[i]);
-                        ll.addView(cb);
-                    }
-                }
-            });
+        String [] arr = new String[5];
+        arr[0] = "Bars";arr[1] = "Strip Clubs";arr[2] = "Restaurants"; arr[3] = "SuperMarkets";arr[4] = "Vegan Places";
+        for(int i = 0; i < arr.length; i++)
+        {
+        CheckBox cb = new CheckBox(getApplicationContext());
+        cb.setText(arr[i]);
+        ll.addView(cb);
+        }
+
 
         // This is the Code that will send the Activity back to the main Activity "Listener"
         backButton.setOnClickListener(new View.OnClickListener()
