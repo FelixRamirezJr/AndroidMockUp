@@ -76,6 +76,12 @@ public class MainActivity extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), Contacts.class));
     }
 
+    public void preferencesClick(View v)
+    {
+        Intent preference = new Intent(this,Preferences.class);
+        startActivity(new Intent(getApplicationContext(),Preferences.class));
+    }
+
     public void setActivityBackgroundColor(int color){
         View view = this.getWindow().getDecorView();
         view.setBackgroundColor(color);

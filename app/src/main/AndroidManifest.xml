@@ -32,14 +32,17 @@
             android:name=".MeetUp"
             android:label="MeetUp" >
         </activity>
+
         <activity
             android:name=".Preferences"
             android:label="Preferences" >
         </activity>
+
         <activity
             android:name=".Contacts"
             android:label="@string/title_activity_contacts" >
         </activity>
+
     </application>
 
 </manifest>
