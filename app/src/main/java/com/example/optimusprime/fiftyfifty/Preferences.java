@@ -1,24 +1,15 @@
 package com.example.optimusprime.fiftyfifty;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AbsoluteLayout;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class Preferences extends ActionBarActivity {
 
@@ -43,10 +34,23 @@ public class Preferences extends ActionBarActivity {
 
 
         backButton.setText("Back");
-
         b.setText("Choose your list of preferences");
         ll.addView(backButton);
         ll.addView(b);
+
+        ///// CREATING THE YELP LOGO ///////
+
+        ImageView image = new ImageView(this);
+        LinearLayout.LayoutParams vp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
+        image.setLayoutParams(vp);
+        image.setMaxHeight(50);
+        image.setMaxWidth(50);
+// other image settings
+        image.setImageDrawable(getResources().getDrawable(R.drawable.yelplogo));
+        ll.addView(image);
+        ////////
+
+
 
                     // This is Creating the CheckBoxes Should Extract From the YELP API
         String [] arr = new String[5];
