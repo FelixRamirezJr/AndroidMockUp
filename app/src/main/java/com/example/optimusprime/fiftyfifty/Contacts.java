@@ -33,9 +33,18 @@ public class Contacts extends ActionBarActivity {
         params.gravity= Gravity.RIGHT;
         backButton.setLayoutParams(params);
         backButton.setText("Back");
-        ll.addView(backButton);
-        ////////END OF THE CREATION////////
 
+        backButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent goBackToMode1 = new Intent(this, MainActivity.class);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+        ////////END OF THE CREATION////////
+        ll.addView(backButton);
 
         setContentView(sv);
 
