@@ -47,7 +47,7 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
         view.setBackgroundColor(0x00000000);
         this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.activity_main,null);
         this.setContentView(root);
-       // setUpMapIfNeeded(); // This should be implemented later
+        // setUpMapIfNeeded(); // This should be implemented later
     }
 
     // This is the OnResume Especially for google maps
@@ -66,25 +66,18 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null)
         {
-
             // Try to obtain the map from the SupportMapFragment.
           //  mMapFragment = SupportMapFragment.newInstance();
           //  FragmentTransaction fragmentTransaction = ((SupportMapFragment) getFragmentManager().findFragmentById(R.id.mapView).getChildFragmentManager());
          //   fragmentTransaction.add(R.id.game_map_container, mMapFragment);
         //    fragmentTransaction.commit();
-
-
             mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView))
                    .getMap();
-
-
             //To use current locations
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
-
             //To enable map clickable events
             mMap.setOnMapClickListener(this);
-
             // Check if we were successful in obtaining the map.
             if (mMap != null) {
                 setUpMap();

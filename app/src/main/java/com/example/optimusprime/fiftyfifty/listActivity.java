@@ -3,12 +3,15 @@ package com.example.optimusprime.fiftyfifty;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
@@ -27,8 +30,39 @@ public class listActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
 
        // setContentView(R.layout.activity_list); // Try moving this to the bottom if it crashes...
-        rl = new RelativeLayout(this);
 
+        ScrollView sv = new ScrollView(this);
+        final LinearLayout ll = new LinearLayout(this);
+        ll.setOrientation(LinearLayout.VERTICAL);
+        sv.addView(ll);
+
+
+        ///////////////////////////////////////
+        // CREATING THE BACK BUTTON AND LAYOUT
+        ///////////////////////////////////////
+        Button backButton = new Button(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.FILL_PARENT);
+        params.weight = (int) 1.0f;
+        params.gravity= Gravity.RIGHT;
+        backButton.setLayoutParams(params);
+        ///////END OF BACK BUTTON CREATION/////
+
+        ////////////////////////////////////
+        // CREATING THE YELP LOGO
+        ////////////////////////////////////
+        ImageView image = new ImageView(this);
+        LinearLayout.LayoutParams vp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
+        image.setLayoutParams(vp);
+        image.setMaxHeight(50);
+        image.setMaxWidth(50);
+        image.setImageDrawable(getResources().getDrawable(R.drawable.yelplogo));
+        ll.addView(image);
+        //////////END OF LOGO///////////////////
+
+        backButton.setText("Back");
+        ll.addView(backButton);
+
+        // ARRAY OF DATA ///
         stringLocations = new String[4]; // When screen is located, Should ask for the
         starRatings = new double[4];
 
@@ -42,9 +76,6 @@ public class listActivity extends ActionBarActivity
             //////////////////////////////////////////////////////////
             // This is creating the Parameters for the Relative Layout
             //////////////////////////////////////////////////////////
-            RelativeLayout.LayoutParams lprams = new RelativeLayout.LayoutParams(
-            RelativeLayout.LayoutParams.WRAP_CONTENT,
-            RelativeLayout.LayoutParams.WRAP_CONTENT);
             Button tv1 = new Button(this);
             ImageView rate = new ImageView(this);
 
@@ -52,11 +83,6 @@ public class listActivity extends ActionBarActivity
             // These following conditions will set up the ratings for the Certain Object
 
                // LinearLayout.LayoutParams vp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
-
-                RelativeLayout.LayoutParams viewParams = new RelativeLayout.LayoutParams(
-                        RelativeLayout.LayoutParams.WRAP_CONTENT,
-                        RelativeLayout.LayoutParams.WRAP_CONTENT
-                );
 
                 rate.setMaxHeight(50);
                 rate.setMaxWidth(50);
@@ -108,41 +134,12 @@ public class listActivity extends ActionBarActivity
                 }
 
 
-            tv1.setText( (i + 1) + stringLocations[i]);
-            // PICTURES ARE BEING ADDED BUT IT IS NOT WORKING CORRECTLY....
-            if(i > 0)
-            {
-                lprams.addRule(RelativeLayout.BELOW, i);
-               // viewParams.addRule(RelativeLayout.RIGHT_OF,i);
-            }
-            //Setting up the layouts for the Button AKA the Location for Selection...
-
-            tv1.setLayoutParams(lprams);
-
-                tv1.setId(i+ 1);
-                count++;
-
-            // Adding The Two objects to the view...
-
-            rl.addView(tv1);
-
-            // Setting up the Location of the ImageView
-            if(i > 0)
-            {
-                lprams.addRule(RelativeLayout.ALIGN_RIGHT,i);
-            }
-            else
-            {
-                lprams.addRule(RelativeLayout.ALIGN_RIGHT,0);
-            }
-            rate.setLayoutParams(lprams);
-            rate.setId(i+1);
-
-            rl.addView(rate);
-            count++;
+            tv1.setText( (i + 1) + ". " + stringLocations[i]);
+            ll.addView(tv1);
+            ll.addView(rate);
         }
 
-        setContentView(rl); // Try this maybe???
+        setContentView(sv); // Try this maybe???
     }
 
 
