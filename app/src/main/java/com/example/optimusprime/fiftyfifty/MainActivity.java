@@ -197,9 +197,14 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
         startActivity(new Intent(getApplicationContext(), Mode2.class));
     }
 
-    public void mode3Click(View v){
-        Intent moveMode3 = new Intent(this, Mode3.class);
-        startActivity(new Intent(getApplicationContext(), Mode3.class));
+    public void mode3Click(View v)
+    {
+        // In here I Will modify the Android Mode 3 just to test the activity...
+       // Intent moveMode3 = new Intent(this, Mode3.class);
+       // startActivity(new Intent(getApplicationContext(), Mode3.class));
+
+        Intent navIntent = new Intent(this,NavigationExample.class);
+        startActivity(navIntent);
     }
 
     public void ContactClick(View v){

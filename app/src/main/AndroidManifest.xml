@@ -2,14 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.optimusprime.fiftyfifty" >
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
 
     <application
         android:allowBackup="true"
@@ -53,13 +51,19 @@
             android:name=".ShowThomasActivity"
             android:label="@string/title_activity_show_thomas" >
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBa3ieMEI4JCJbS_pCNPvP1f4hdVjRgYmY"/>
-
+            android:value="AIzaSyBa3ieMEI4JCJbS_pCNPvP1f4hdVjRgYmY" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".NavigationExample"
+            android:label="@string/title_activity_navigation_example" >
+        </activity>
+
 
     </application>
 

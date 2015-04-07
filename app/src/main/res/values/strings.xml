@@ -12,5 +12,15 @@
     <string name="title_activity_friends">Friends</string>
     <string name="title_activity_contacts">Contacts</string>
     <string name="title_activity_show_thomas">ShowThomasActivity</string>
+    <string name="title_activity_navigation_example">NavigationExample</string>
+
+    <string name="title_section1">Mode 1</string>
+    <string name="title_section2">Mode 2</string>
+    <string name="title_section3">Mode 3</string>
+
+    <string name="navigation_drawer_open">Menu</string>
+    <string name="navigation_drawer_close">Exit Menu</string>
+
+    <string name="action_example">Example action</string>
 
 </resources>
