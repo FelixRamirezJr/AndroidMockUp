@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 /**
  * Created by Optimus Prime on 4/6/2015.
  */
-public class Mode1Fragment extends Fragment {
-
+public class Mode1Fragment extends Fragment
+{
     View rootView;
 
     @Nullable

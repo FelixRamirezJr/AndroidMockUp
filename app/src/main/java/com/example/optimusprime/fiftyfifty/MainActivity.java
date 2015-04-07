@@ -178,7 +178,8 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
     ////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    public void listClick(View v){
+    public void listClick(View v)
+    {
         Intent moveToList = new Intent(this, listActivity.class);
         startActivity(new Intent(getApplicationContext(), listActivity.class));
     }

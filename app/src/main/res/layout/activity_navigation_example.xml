@@ -7,7 +7,44 @@
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
     <FrameLayout android:id="@+id/container" android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="meetClick"
+            android:background="@drawable/button"
+            android:text="Meet Up"
+            android:id="@+id/MeetUpButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right|bottom" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:background="@drawable/button"
+            android:id="@+id/PreferencesButton"
+            android:onClick="preferencesClick"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="left|bottom" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="listClick"
+            android:background="@drawable/button"
+            android:text="List"
+            android:id="@+id/ListButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center_horizontal|bottom" />
+
+    </FrameLayout>
 
     <!-- android:layout_gravity="start" tells DrawerLayout to treat
          this as a sliding drawer on the left side for left-to-right

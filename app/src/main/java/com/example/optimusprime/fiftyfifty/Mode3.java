@@ -49,7 +49,8 @@ public class Mode3 extends ActionBarActivity {
         startActivity(new Intent(getApplicationContext(), listActivity.class));
     }
 
-    public void meetClick(View v){
+    public void meetClick(View v)
+    {
         Intent moveMyMeat = new Intent(this, MeetUp.class);
         startActivity(new Intent(getApplicationContext(), MeetUp.class));
     }

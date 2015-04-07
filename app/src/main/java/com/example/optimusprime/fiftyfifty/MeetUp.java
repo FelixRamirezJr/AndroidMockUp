@@ -24,7 +24,8 @@ public class MeetUp extends ActionBarActivity {
         return true;
     }
 
-    public void mode1Click(View v){
+    public void mode1Click(View v)
+    {
         Intent moveMode2 = new Intent(this, MainActivity.class);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }

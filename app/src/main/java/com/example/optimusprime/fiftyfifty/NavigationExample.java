@@ -1,6 +1,7 @@
 package com.example.optimusprime.fiftyfifty;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -31,6 +32,7 @@ public class NavigationExample extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_navigation_example);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -44,7 +46,8 @@ public class NavigationExample extends ActionBarActivity
     }
 
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
+    public void onNavigationDrawerItemSelected(int position)
+    {
 
         // This should start each one of the Fragments...
 
@@ -86,7 +89,8 @@ public class NavigationExample extends ActionBarActivity
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
@@ -106,7 +110,8 @@ public class NavigationExample extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 
@@ -116,7 +121,8 @@ public class NavigationExample extends ActionBarActivity
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment extends Fragment
+    {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -152,5 +158,31 @@ public class NavigationExample extends ActionBarActivity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
+
+    // My Methods That I will Be Implementing...
+
+    // This is Toggling The Menu Should Do nothing and Possibly Will call the menu To be Presed...
+    public void toggleMenu (View v)
+    {
+
+    }
+
+    public void ContactClick(View v){
+        Intent Contact = new Intent(this, Mode3.class);
+        startActivity(new Intent(getApplicationContext(), Contacts.class));
+    }
+
+    public void preferencesClick(View v)
+    {
+        Intent preference = new Intent(this,Preferences.class);
+        startActivity(new Intent(getApplicationContext(),Preferences.class));
+    }
+
+    public void listClick(View v)
+    {
+        Intent moveToList = new Intent(this, listActivity.class);
+        startActivity(new Intent(getApplicationContext(), listActivity.class));
+    }
+
 
 }
