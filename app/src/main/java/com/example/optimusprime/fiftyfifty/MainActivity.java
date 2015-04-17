@@ -36,6 +36,8 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
 
     //These variables are for the directions API
     DemoDirections d;
+    ActionItem addAction = new ActionItem();
+    // Creating Variables for The Action Bar.
 
 
     // MenuItem menuButtons;
@@ -94,7 +96,8 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
     ///////////////////////////
     // This is a Demo Location
     ////////////////////////////
-    private void setUpMap() {
+    private void setUpMap()
+    {
         //Demo Location
         demoLoc = new LatLng(37.7578018,-122.4657954);
         mMap.addMarker(new MarkerOptions().position(demoLoc).title("Custom Marker"));
@@ -184,9 +187,48 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
         startActivity(new Intent(getApplicationContext(), listActivity.class));
     }
 
-    public void meetClick(View v){
-        Intent moveMyMeat = new Intent(this, MeetUp.class);
-        startActivity(new Intent(getApplicationContext(), MeetUp.class));
+
+    //////////////////////////////////////////////////////
+    // THIS FOLLOWING METHOD SHOULD CALL THE POP UP BLOB
+    ////////////////////////////////////////////////////
+    public void meetClick(View v)
+    {
+        //Intent moveMyMeat = new Intent(this, MeetUp.class);
+        //startActivity(new Intent(getApplicationContext(), MeetUp.class));
+        addAction.setTitle("I am Going To add This Long Ass Name and See if it Makes Something Huge!\nasdf\nasdf\nasdfasdf\nasdfasdf\nasdf");
+
+        // Creating The Actions..
+        ActionItem something = new ActionItem();
+
+
+
+
+        something.setTitle("Click");
+        final QuickAction mQuickAction = new QuickAction(this,QuickAction.VERTICAL);
+        mQuickAction.addActionItem(addAction);
+        mQuickAction.addActionItem(something);
+
+
+        mQuickAction.setOnActionItemClickListener(new QuickAction.OnActionItemClickListener() {
+            @Override
+            public void onItemClick(QuickAction source, int pos, int actionId)
+            {
+                if(pos == 0)
+                {
+                    Toast.makeText(MainActivity.this,"Add Item Selected",Toast.LENGTH_SHORT).show();
+                }
+                else if(pos == 1)
+                {
+                    Toast.makeText(MainActivity.this,"Something Selected",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"NOTHING?", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+       // addAction.setIcon(getResources().getDrawable(R.drawable.ic));
+       mQuickAction.show(v);
     }
 
     public void mode1Click(View v){
