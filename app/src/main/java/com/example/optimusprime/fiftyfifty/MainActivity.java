@@ -195,18 +195,32 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
     {
         //Intent moveMyMeat = new Intent(this, MeetUp.class);
         //startActivity(new Intent(getApplicationContext(), MeetUp.class));
-        addAction.setTitle("I am Going To add This Long Ass Name and See if it Makes Something Huge!\nasdf\nasdf\nasdfasdf\nasdfasdf\nasdf");
+        addAction.setTitle("Add");
 
         // Creating The Actions..
         ActionItem something = new ActionItem();
-
-
-
+        ActionItem one = new ActionItem();
+        ActionItem two = new ActionItem();
+        ActionItem three = new ActionItem();
+        ActionItem four = new ActionItem();
+        ActionItem five = new ActionItem();
 
         something.setTitle("Click");
+        one.setTitle("One");
+        two.setTitle("Two");
+        three.setTitle("Three");
+        four.setTitle("Four");
+        five.setTitle("Five");
+
+
         final QuickAction mQuickAction = new QuickAction(this,QuickAction.VERTICAL);
         mQuickAction.addActionItem(addAction);
         mQuickAction.addActionItem(something);
+        mQuickAction.addActionItem(one);
+        mQuickAction.addActionItem(two);
+        mQuickAction.addActionItem(three);
+        mQuickAction.addActionItem(four);
+        mQuickAction.addActionItem(five);
 
 
         mQuickAction.setOnActionItemClickListener(new QuickAction.OnActionItemClickListener() {
@@ -276,7 +290,6 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
             View b = findViewById(R.id.MenuButton);
             b.setVisibility(View.GONE);
         }
-
         else
         {
             setVisible(true);
