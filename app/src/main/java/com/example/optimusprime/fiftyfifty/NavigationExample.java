@@ -8,11 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 public class NavigationExample extends ActionBarActivity
@@ -21,6 +23,7 @@ public class NavigationExample extends ActionBarActivity
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
+    DrawerLayout mDrawerLayout;
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
     /**
@@ -31,6 +34,8 @@ public class NavigationExample extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_navigation_example);
@@ -40,9 +45,13 @@ public class NavigationExample extends ActionBarActivity
         mTitle = getTitle();
 
         // Set up the drawer.
-        mNavigationDrawerFragment.setUp(
+        mNavigationDrawerFragment.setUp
+                (
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
     }
 
     @Override
@@ -91,7 +100,9 @@ public class NavigationExample extends ActionBarActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
+        Toast.makeText((getApplicationContext()), "onCreateOptMennavExample", Toast.LENGTH_SHORT).show();
+        if (!mNavigationDrawerFragment.isDrawerOpen())
+        {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
@@ -99,6 +110,25 @@ public class NavigationExample extends ActionBarActivity
             restoreActionBar();
             return true;
         }
+
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onCreateOptionsMenuTHE()
+    {
+        Menu menu = null;
+        if (!mNavigationDrawerFragment.isDrawerOpen())
+        {
+            // Only show items in the action bar relevant to this screen
+            // if the drawer is not showing. Otherwise, let the drawer
+            // decide what to show in the action bar.
+            getMenuInflater().inflate(R.menu.navigation_example, menu);
+            restoreActionBar();
+            return true;
+        }
+
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -168,14 +198,20 @@ public class NavigationExample extends ActionBarActivity
     }
 
     public void ContactClick(View v){
-        Intent Contact = new Intent(this, Mode3.class);
-        startActivity(new Intent(getApplicationContext(), Contacts.class));
+     //   Intent Contact = new Intent(this, Mode3.class);
+     //   startActivity(new Intent(getApplicationContext(), Contacts.class));
+     //   onCreateOptionsMenuTHE();
     }
 
     public void preferencesClick(View v)
     {
-        Intent preference = new Intent(this,Preferences.class);
-        startActivity(new Intent(getApplicationContext(),Preferences.class));
+     //   Intent preference = new Intent(this,Preferences.class);
+     //   startActivity(new Intent(getApplicationContext(),Preferences.class));
+        //DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+       mDrawerLayout.openDrawer(Gravity.LEFT);
+
+
     }
 
     public void listClick(View v)
@@ -184,5 +220,8 @@ public class NavigationExample extends ActionBarActivity
         startActivity(new Intent(getApplicationContext(), listActivity.class));
     }
 
+    public void openDrawer(){
+        mDrawerLayout.openDrawer(mDrawerLayout);
+    }
 
 }

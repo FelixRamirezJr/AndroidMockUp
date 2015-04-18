@@ -195,7 +195,7 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
     {
         //Intent moveMyMeat = new Intent(this, MeetUp.class);
         //startActivity(new Intent(getApplicationContext(), MeetUp.class));
-        addAction.setTitle("Add");
+        addAction.setTitle("Bank Of America \n 123 Fake Street \n 209-567-7777 \n 98765");
 
         // Creating The Actions..
         ActionItem something = new ActionItem();
@@ -204,6 +204,9 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
         ActionItem three = new ActionItem();
         ActionItem four = new ActionItem();
         ActionItem five = new ActionItem();
+
+
+
 
         something.setTitle("Click");
         one.setTitle("One");
@@ -215,12 +218,12 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
 
         final QuickAction mQuickAction = new QuickAction(this,QuickAction.VERTICAL);
         mQuickAction.addActionItem(addAction);
-        mQuickAction.addActionItem(something);
-        mQuickAction.addActionItem(one);
-        mQuickAction.addActionItem(two);
-        mQuickAction.addActionItem(three);
-        mQuickAction.addActionItem(four);
-        mQuickAction.addActionItem(five);
+       // mQuickAction.addActionItem(something);
+       // mQuickAction.addActionItem(one);
+       // mQuickAction.addActionItem(two);
+       // mQuickAction.addActionItem(three);
+       // mQuickAction.addActionItem(four);
+       // mQuickAction.addActionItem(five);
 
 
         mQuickAction.setOnActionItemClickListener(new QuickAction.OnActionItemClickListener() {
