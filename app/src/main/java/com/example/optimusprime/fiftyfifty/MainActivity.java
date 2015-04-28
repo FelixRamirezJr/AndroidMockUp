@@ -268,8 +268,10 @@ public class MainActivity extends FragmentActivity implements GoogleMap.OnMapCli
     }
 
     public void ContactClick(View v){
-        Intent Contact = new Intent(this, Mode3.class);
-        startActivity(new Intent(getApplicationContext(), Contacts.class));
+       // Intent Contact = new Intent(this, Mode3.class);
+       // startActivity(new Intent(getApplicationContext(), Contacts.class));
+        Intent ContactList = new Intent(this, ContactList.class);
+        startActivity(ContactList);
     }
 
     public void preferencesClick(View v)

@@ -18,7 +18,8 @@ import android.widget.Toast;
 
 
 public class NavigationExample extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks
+{
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -38,6 +39,11 @@ public class NavigationExample extends ActionBarActivity
 
         super.onCreate(savedInstanceState);
 
+        getSupportActionBar().hide();
+
+
+         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_navigation_example);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -51,6 +57,7 @@ public class NavigationExample extends ActionBarActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
 
     }
 
