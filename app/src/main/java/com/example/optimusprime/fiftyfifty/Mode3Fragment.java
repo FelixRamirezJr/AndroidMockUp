@@ -21,7 +21,8 @@ import java.util.ArrayList;
 /**
  * Created by Optimus Prime on 4/6/2015.
  */
-public class Mode3Fragment extends Fragment {
+public class Mode3Fragment extends Fragment
+{
 
     View rootView;
     QuickAction mQuickAction = null;
